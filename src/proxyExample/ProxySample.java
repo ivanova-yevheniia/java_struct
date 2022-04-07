@@ -1,3 +1,5 @@
+package proxyExample;
+
 public class ProxySample {
     public static void main(String[] args)throws Exception{
 

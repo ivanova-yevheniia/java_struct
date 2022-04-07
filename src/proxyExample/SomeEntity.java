@@ -1,3 +1,5 @@
+package proxyExample;
+
 class SomeEntity implements SomeInterface {
 
     int field;
@@ -6,7 +8,6 @@ class SomeEntity implements SomeInterface {
     public int getField() {
         return field;
     }
-
     public void setField(int field) {
         this.field = field;
     }
