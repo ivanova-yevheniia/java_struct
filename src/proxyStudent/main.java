@@ -17,25 +17,28 @@ public class main {
 
         //get Methods names + modifiers + parameters --- for super class
         Method[] method = student1.getClass().getMethods();
-
-        for (Method m : method) {
-            if (m.getName().startsWith("get") || m.getName().startsWith("to") || m.getName().startsWith("set")) {
-                System.out.print("Method name: " + m.getName());
-                System.out.print(" | modifiers: ");
-                int modifier = m.getModifiers();
-                System.out.print(Modifier.toString(modifier));
-                System.out.print(" | parameters: ");
-                if (m.getName().startsWith("get") || m.getName().startsWith("to")) {
-                    System.out.print("no parameters\n");
-                } else {
-                    Class[] parameterTypes = m.getParameterTypes();
-                    for (Class p : parameterTypes) {
-                        System.out.print(p.getName() + " ");
+        try {
+            for (Method m : method) {
+                if (m.getName().startsWith("get") || m.getName().startsWith("to") || m.getName().startsWith("set")) {
+                    System.out.print("Method name: " + m.getName());
+                    System.out.print(" | modifiers: ");
+                    int modifier = m.getModifiers();
+                    System.out.print(Modifier.toString(modifier));
+                    System.out.print(" | parameters: ");
+                    if (m.getName().startsWith("get") || m.getName().startsWith("to")) {
+                        System.out.print("no parameters\n");
+                    } else {
+                        Class[] parameterTypes = m.getParameterTypes();
+                        for (Class p : parameterTypes) {
+                            System.out.print(p.getName() + " ");
+                        }
+                        System.out.print("\n");
                     }
-                    System.out.print("\n");
-                }
 
+                }
             }
+        }catch(Exception e) {
+            e.printStackTrace();
         }
     }
 }
